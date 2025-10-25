@@ -13,17 +13,16 @@
       padding: 0;
       color: #0d47a1;
       text-align: center;
-      overflow-x: hidden;
     }
 
     header {
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     h1 {
-      font-size: 30px;
+      font-size: 32px;
       color: #0d47a1;
-      text-shadow: 1px 1px 2px white;
+      text-shadow: 1px 1px 2px #fff;
     }
 
     h3 {
@@ -34,9 +33,9 @@
 
     .buttons {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
       margin-top: 100px;
     }
 
@@ -44,12 +43,11 @@
       background: linear-gradient(90deg, #2196f3, #64b5f6);
       border: none;
       color: white;
-      padding: 15px 40px;
+      padding: 15px 30px;
       border-radius: 12px;
       font-size: 18px;
       cursor: pointer;
       transition: 0.3s;
-      width: 260px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
@@ -99,49 +97,38 @@
       color: #000;
     }
 
-    h2 {
-      color: #1565c0;
+    .platform-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .platform-links a {
+      text-decoration: none;
+      background: #e3f2fd;
+      color: #0d47a1;
+      padding: 15px 25px;
+      border-radius: 10px;
+      transition: 0.3s;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .platform-links a:hover {
+      background: #bbdefb;
+      transform: scale(1.05);
     }
 
     ul {
       line-height: 1.7;
     }
 
-    .platform-icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 20px;
-    }
-
-    .platform {
-      background: #e3f2fd;
-      border-radius: 10px;
-      padding: 15px;
-      width: 150px;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    }
-
-    .platform:hover {
-      transform: scale(1.05);
-      background: #bbdefb;
-    }
-
-    .platform img {
-      width: 60px;
-      height: 60px;
-    }
-
     .footer {
-      margin-top: 50px;
+      margin-top: 60px;
       color: white;
       text-shadow: 1px 1px 2px #000;
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
     }
   </style>
 </head>
@@ -153,22 +140,22 @@
   </header>
 
   <div class="buttons">
-    <button onclick="openModal('refleksiya')">🪞 Рефлексия</button>
-    <button onclick="openModal('platforma')">💻 Платформалар</button>
-    <button onclick="openModal('trening')">🌿 Тренингтер</button>
-    <button onclick="openModal('zhylySoz')">💖 Жылы сөздер</button>
+    <button onclick="openModal('refleksiya')">Рефлексия</button>
+    <button onclick="openModal('platforma')">Платформалар</button>
+    <button onclick="openModal('trening')">Тренингтер</button>
+    <button onclick="openModal('zhylySoz')">Жылы сөздер</button>
   </div>
 
   <!-- РЕФЛЕКСИЯ -->
   <div id="refleksiya" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('refleksiya')">&times;</span>
-      <h2>🪞 Рефлексия</h2>
-      <p>Оқушылар өз пікірін, сезімін білдіру арқылы сабақтың маңызын түсінеді. Рефлексия үшін келесі платформаларды қолдануға болады:</p>
+      <h2>Рефлексия</h2>
+      <p>Оқушылар өз ойларын, сезімдерін білдіру арқылы сабақтың мәнін терең түсінеді. Рефлексияны келесі тәсілдер арқылы өткізуге болады:</p>
       <ul>
-        <li>💬 Mentimeter — интерактивті сұрақтар мен сөз бұлттары.</li>
-        <li>📋 Google Forms — кері байланыс алу.</li>
-        <li>🧠 Kahoot — ойынды рефлексия түрінде пайдалану.</li>
+        <li>Mentimeter — интерактивті сауал қою және сөз бұлты арқылы.</li>
+        <li>Padlet — оқушылардың пікірлерін ортақ тақтада жинау.</li>
+        <li>Kahoot — ойын түрінде кері байланыс алу.</li>
       </ul>
     </div>
   </div>
@@ -177,29 +164,14 @@
   <div id="platforma" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('platforma')">&times;</span>
-      <h2>💻 Платформалар</h2>
-      <p>Сабақта рефлексия мен тренингтер өткізуге көмектесетін заманауи онлайн құралдар:</p>
-      <div class="platform-icons">
-        <a href="https://www.mentimeter.com" target="_blank" class="platform">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mentimeter_Logo.png" alt="Mentimeter">
-          <p><b>Mentimeter</b></p>
-        </a>
-        <a href="https://padlet.com" target="_blank" class="platform">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Padlet_logo.png" alt="Padlet">
-          <p><b>Padlet</b></p>
-        </a>
-        <a href="https://kahoot.com" target="_blank" class="platform">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Kahoot_Logo.png" alt="Kahoot">
-          <p><b>Kahoot</b></p>
-        </a>
-        <a href="https://jamboard.google.com" target="_blank" class="platform">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Jamboard_logo.png" alt="Jamboard">
-          <p><b>Jamboard</b></p>
-        </a>
-        <a href="https://forms.google.com" target="_blank" class="platform">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Google_Forms_logo_%282014-2020%29.svg" alt="Forms">
-          <p><b>Google Forms</b></p>
-        </a>
+      <h2>Платформалар</h2>
+      <p>Сабақ пен тренинг өткізуге арналған тиімді онлайн платформалар:</p>
+      <div class="platform-links">
+        <a href="https://www.mentimeter.com" target="_blank">Mentimeter</a>
+        <a href="https://padlet.com" target="_blank">Padlet</a>
+        <a href="https://kahoot.com" target="_blank">Kahoot</a>
+        <a href="https://jamboard.google.com" target="_blank">Jamboard</a>
+        <a href="https://forms.google.com" target="_blank">Google Forms</a>
       </div>
     </div>
   </div>
@@ -208,15 +180,15 @@
   <div id="trening" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('trening')">&times;</span>
-      <h2>🌿 Тренингтер</h2>
+      <h2>Тренингтер</h2>
       <h3>1. «Жылы сөздер бағы»</h3>
-      <p>Оқушылар жылы сөздер жазылған қағаз гүлдерді қабырғаға іліп, сабақ соңында «жылы сөздер бағы» қалыптастырады.</p>
+      <p>Әр оқушы жылы сөз жазып, гүлге айналдырады. Сабақ соңында «жылы сөздер бағы» ілінеді — сыныптың позитивті энергиясы артады.</p>
       <h3>2. «Жылы сөздер жәшігі»</h3>
-      <p>Әр оқушы бір-біріне тілек жазып, жәшікке салады. Апта соңында ашып, бәрі бірге оқиды.</p>
+      <p>Оқушылар бір-біріне тілек жазып, жәшікке салады. Апта соңында ашып, бәрі бірге жылы лебіздерін оқиды.</p>
       <h3>3. «Мейірім көпірі»</h3>
-      <p>Жұппен жұмыс: оқушылар бір-бірінің жақсы қасиетін атап өтеді. Бұл жылы байланыс орнатады.</p>
+      <p>Жұппен жұмыс жасап, әркім серігінің жақсы қасиетін айтып, бір-біріне алғыс білдіреді.</p>
       <h3>4. «Жүректен жүрекке»</h3>
-      <p>Барлығы шеңберге отырып, бір-біріне шынайы тілек арнайды. Бұл — сабақтың ең әсерлі сәті.</p>
+      <p>Барлығы шеңберге отырып, өз тілек сөздерін бөліседі. Бұл тренинг сыныпта жылы атмосфера орнатады.</p>
     </div>
   </div>
 
@@ -224,18 +196,18 @@
   <div id="zhylySoz" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('zhylySoz')">&times;</span>
-      <h2>💖 Жылы сөздер</h2>
+      <h2>Жылы сөздер</h2>
       <ul>
-        <li>🌸 Сенің күнің сәтті өтсін!</li>
-        <li>🌿 Сен бәрін істей аласың!</li>
-        <li>💫 Сенің еңбегің бағалы!</li>
-        <li>🌻 Сенің жүрегің мейірімге толы!</li>
-        <li>❤️ Сенің сөзің шабыт береді!</li>
-        <li>🌈 Мақсатыңа міндетті түрде жетесің!</li>
-        <li>☀️ Күнің қуанышқа толы болсын!</li>
-        <li>⭐ Сен бар жерде жылулық бар!</li>
-        <li>💐 Сен ерекше тұлғасың!</li>
-        <li>🌼 Сенің күлкің — ең әдемі нұр!</li>
+        <li>Сенің күлкің — айналаға қуаныш сыйлайды.</li>
+        <li>Сен бәрін жасай аласың!</li>
+        <li>Бүгінгі күнің сәтті өтсін!</li>
+        <li>Сенің сөзің шабыт береді.</li>
+        <li>Сен ерекше адамсың!</li>
+        <li>Мақсатыңа міндетті түрде жетесің!</li>
+        <li>Күнің жарық болсын!</li>
+        <li>Сен бар жерде жылулық бар!</li>
+        <li>Сенің еңбегің бағалы!</li>
+        <li>Жаның мейірімге толы!</li>
       </ul>
     </div>
   </div>
