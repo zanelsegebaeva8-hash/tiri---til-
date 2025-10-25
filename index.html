@@ -1,51 +1,136 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tiri Til Hub</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e8f5e9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #81c784;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav button {
+      background: white;
+      border: none;
+      border-radius: 8px;
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    section {
+      margin: 40px auto;
+      width: 90%;
+      max-width: 900px;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #388e3c;
+    }
+
+    a.platform-link {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      margin: 10px;
+    }
+
+    footer {
+      background-color: #a5d6a7;
+      padding: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <h1>🌿 Tiri Til Hub</h1>
+    <h1>Tiri Til Hub</h1>
     <p>Тіл мен жүректің үндестігі</p>
+    <nav>
+      <button onclick="showSection('refleksiya')">🪞 Рефлексия</button>
+      <button onclick="showSection('platformalar')">🧩 Платформалар</button>
+      <button onclick="showSection('treningter')">🎯 Тренингтер</button>
+      <button onclick="showSection('zhyly-sozder')">❤️ Жылы сөздер</button>
+    </nav>
   </header>
 
-  <main>
-    <section class="menu">
-      <button onclick="openSection('refleksiya')">🪞 Рефлексия</button>
-      <button onclick="openSection('platformalar')">💻 Платформалар</button>
-      <button onclick="openSection('treningter')">💬 Тренингтер</button>
-      <button onclick="openSection('zhylysuzder')">💖 Жылы сөздер</button>
-    </section>
+  <!-- Рефлексия -->
+  <section id="refleksiya" style="display: none;">
+    <h2>🪞 Рефлексия</h2>
+    <p>Бұл бөлімде сабақтан кейін өз ойыңды, сезіміңді және жетістігіңді талдауға арналған ресурстар бар.</p>
+    <a href="https://www.mentimeter.com/" target="_blank" class="platform-link" style="background:#a5d6a7;">Mentimeter</a>
+    <a href="https://padlet.com/" target="_blank" class="platform-link" style="background:#81d4fa;">Padlet</a>
+    <a href="https://forms.google.com/" target="_blank" class="platform-link" style="background:#f8bbd0;">Google Forms</a>
+  </section>
 
-    <section id="content" class="content">
-      <h2>Қош келдіңіз!</h2>
-      <p>Бұл сайтта тіл мен жүректің үндестігін табуға бағытталған тапсырмалар, платформалар мен тренингтер жинақталған.</p>
-    </section>
-  </main>
+  <!-- Платформалар -->
+  <section id="platformalar">
+    <h2>🧩 Платформалар мен құралдар</h2>
+    <p>Бұл бөлімде тіл мен жүректің үндестігін дамытуға арналған онлайн платформалар мен сервистер жинақталған.</p>
+
+    <a href="https://www.mentimeter.com/" target="_blank" class="platform-link" style="background:#a5d6a7;">Mentimeter</a>
+    <a href="https://padlet.com/" target="_blank" class="platform-link" style="background:#81d4fa;">Padlet</a>
+    <a href="https://kahoot.com/" target="_blank" class="platform-link" style="background:#ffcc80;">Kahoot</a>
+    <a href="https://jamboard.google.com/" target="_blank" class="platform-link" style="background:#ffe082;">Jamboard</a>
+    <a href="https://forms.google.com/" target="_blank" class="platform-link" style="background:#f8bbd0;">Google Forms</a>
+  </section>
+
+  <!-- Тренингтер -->
+  <section id="treningter" style="display: none;">
+    <h2>🎯 Тренингтер</h2>
+    <p>Тіл мен қарым-қатынас дағдыларын дамытуға арналған онлайн тренингтер.</p>
+    <a href="https://kahoot.com/" target="_blank" class="platform-link" style="background:#ffcc80;">Kahoot</a>
+    <a href="https://quizizz.com/" target="_blank" class="platform-link" style="background:#b39ddb;">Quizizz</a>
+    <a href="https://edpuzzle.com/" target="_blank" class="platform-link" style="background:#80deea;">Edpuzzle</a>
+  </section>
+
+  <!-- Жылы сөздер -->
+  <section id="zhyly-sozder" style="display: none;">
+    <h2>❤️ Жылы сөздер</h2>
+    <p>Мұнда мотивациялық және рухани шабыт беретін сөздер жинақталған.</p>
+    <blockquote>“Тіл – халықтың жаны.”</blockquote>
+    <blockquote>“Жақсы сөз – жарым ырыс.”</blockquote>
+    <blockquote>“Мейірім мен сүйіспеншілік жүректен басталады.”</blockquote>
+  </section>
 
   <footer>
-    <p>© 2025 Tiri Til Hub | Авторлық педагогикалық идея</p>
+    © 2025 Tiri Til Hub | Авторлық педагогикалық идея
   </footer>
 
-  <script src="script.js"></script>
-<section id="platformalar" style="margin-top: 40px;">
-  <h2>🧩 Платформалар мен құралдар</h2>
-  <p>Бұл бөлімде тіл мен жүректің үндестігін дамытуға арналған онлайн платформалар мен сервистер жинақталған.</p>
-
-  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
-    <a href="https://www.mentimeter.com/" target="_blank" style="background:#a5d6a7; padding:15px 25px; border-radius:8px; text-decoration:none; color:black; font-weight:bold;">Mentimeter — Рефлексия және сауалнама</a>
-
-    <a href="https://padlet.com/" target="_blank" style="background:#81d4fa; padding:15px 25px; border-radius:8px; text-decoration:none; color:black; font-weight:bold;">Padlet — Бірлескен қабырға</a>
-
-    <a href="https://kahoot.com/" target="_blank" style="background:#ffcc80; padding:15px 25px; border-radius:8px; text-decoration:none; color:black; font-weight:bold;">Kahoot — Ойын және тренинг</a>
-
-    <a href="https://jamboard.google.com/" target="_blank" style="background:#ffe082; padding:15px 25px; border-radius:8px; text-decoration:none; color:black; font-weight:bold;">Google Jamboard — Топтық талқылау</a>
-
-    <a href="https://forms.google.com/" target="_blank" style="background:#f8bbd0; padding:15px 25px; border-radius:8px; text-decoration:none; color:black; font-weight:bold;">Google Forms — Кері байланыс</a>
-  </div>
-</section>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+  </script>
 </body>
-</html
+</html>
