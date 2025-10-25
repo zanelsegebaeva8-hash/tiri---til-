@@ -1,288 +1,156 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Тірі тіл — Тіл мен жүректің үндестігі</title>
-<style>
-  :root{
-    --accent1:#1976d2; /* синий */
-    --accent2:#43a047; /* зелёный */
-    --card-bg: rgba(255,255,255,0.95);
-    --text:#123;
-  }
-  html,body{height:100%;margin:0;}
-  body{
-    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-    background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat fixed;
-    color:var(--text);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    padding:28px;
-    box-sizing:border-box;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Жылы сөздер жобасы</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fffdfd;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
 
-  header{
-    position:absolute;
-    top:18px;
-    left:50%;
-    transform:translateX(-50%);
-    text-align:center;
-    color: #042a2b;
-  }
-  header h1{margin:0;font-size:20px;letter-spacing:0.2px;}
-  header p{margin:4px 0 0;font-size:13px;color:rgba(0,0,0,0.6);}
+    header {
+      background-color: #ffe4ec;
+      text-align: center;
+      padding: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      color: white; /* ✅ Добавлено — белый текст */
+    }
 
-  /* Контейнер кнопок — ОДНА ЛИНИЯ */
-  .btn-row{
-    display:flex;
-    flex-direction:row;
-    gap:18px;
-    align-items:center;
-    justify-content:center;
-    white-space:nowrap;         /* не переносить на следующую строку */
-    overflow-x:auto;           /* на узких экранах — прокрутка по горизонтали */
-    padding:8px 6px;
-  }
+    h1 {
+      font-size: 32px;
+      margin: 0;
+      color: white; /* ✅ Сделан белым */
+    }
 
-  .main-btn{
-    min-width:160px;
-    padding:14px 20px;
-    border-radius:12px;
-    border:0;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:600;
-    color:#fff;
-    background: linear-gradient(90deg,var(--accent1), var(--accent2));
-    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-    transition: transform .16s, box-shadow .16s;
-  }
-  .main-btn:hover{ transform: translateY(-4px); box-shadow:0 10px 28px rgba(0,0,0,0.22); }
+    header p {
+      color: white; /* ✅ Белый текст под заголовком */
+      font-size: 16px;
+      margin-top: 8px;
+    }
 
-  /* модалки */
-  .modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background: rgba(0,0,0,0.55);
-    z-index:1000;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-  }
-  .card{
-    width:100%;
-    max-width:920px;
-    background:var(--card-bg);
-    border-radius:14px;
-    box-shadow:0 12px 36px rgba(0,0,0,0.2);
-    padding:20px 22px;
-    box-sizing:border-box;
-    animation:pop .18s ease;
-  }
-  @keyframes pop { from{ transform:scale(.98); opacity:0 } to{ transform:scale(1); opacity:1 } }
-  .card .close{
-    float:right;
-    font-size:20px;
-    color:rgba(0,0,0,0.6);
-    cursor:pointer;
-  }
-  .card h2{ margin:4px 0 12px; color:var(--accent1); }
-  .card p{ margin:8px 0; line-height:1.55; color: #123; }
-  .card ul{ margin:8px 0 0 18px; color:#123; }
-  .platforms{
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-    margin-top:12px;
-    align-items:center;
-    justify-content:center;
-  }
-  .platform{
-    width:150px;
-    background: #f3fbff;
-    border-radius:10px;
-    padding:10px;
-    box-shadow:0 6px 14px rgba(0,0,0,0.08);
-    text-align:center;
-  }
-  .platform img{ width:64px; height:64px; object-fit:contain; display:block; margin:0 auto; }
-  .platform a{ display:block; margin-top:8px; color:var(--accent1); text-decoration:none; font-weight:600; }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-  /* теплые слова — с картинками */
-  .warm-grid{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-top:12px;
-  }
-  .warm-item{
-    width:calc(50% - 18px);
-    min-width:200px;
-    background:#fff7ed;
-    border-radius:10px;
-    padding:12px;
-    box-shadow:0 6px 12px rgba(0,0,0,0.06);
-    display:flex;
-    gap:10px;
-    align-items:center;
-  }
-  .warm-item img{ width:56px; height:56px; object-fit:cover; border-radius:8px; }
-  .warm-item p{ margin:0; font-weight:600; color:#2b3b3b; }
+    a.button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    a.button:hover {
+      opacity: 0.9;
+    }
 
-  footer{ position:fixed; bottom:12px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.95); font-size:13px; }
+    footer {
+      background-color: #ffe4ec;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #444;
+    }
 
-  /* responsive: чтобы на очень узких экранах кнопки можно было прокрутить, но не ломать */
-  @media (max-width:520px){
-    .main-btn{ min-width:140px; padding:12px 16px; font-size:15px; }
-    .warm-item{ width:100%; }
-  }
-</style>
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>«Тірі тіл: тіл мен жүректің үндестігі»</h1>
-    <p>Автор: Шегебаева Жанель — қазақ тілі мен әдебиеті мұғалімі</p>
+    <h1>🌸 Жылы сөздер жобасы</h1>
+    <p>Мейірім мен ізгілікке толы сөздер әлемі</p>
   </header>
 
-  <!-- Кнопки строго в одну линию по центру -->
-  <div class="btn-row">
-    <div class="btn-row-inner" style="display:flex; gap:18px; align-items:center;">
-      <button class="main-btn" onclick="openModal('m-ref')">Рефлексия</button>
-      <button class="main-btn" onclick="openModal('m-tr')">Тренинги</button>
-      <button class="main-btn" onclick="openModal('m-warm')">Жылы сөздер</button>
-      <button class="main-btn" onclick="openModal('m-pl')">Платформалар</button>
+  <!-- 📚 Платформалар -->
+  <section id="platformalar">
+    <h2>💻 Онлайн платформалар мен сервистер</h2>
+    <p>Бұл бөлімде тіл мен жүректің үндестігін дамытуға арналған пайдалы онлайн құралдар жинақталған:</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+      <a href="https://www.mentimeter.com/" target="_blank" class="button" style="background:#a56da7;">Mentimeter</a>
+      <a href="https://padlet.com/" target="_blank" class="button" style="background:#81d4fa;">Padlet</a>
+      <a href="https://kahoot.com/" target="_blank" class="button" style="background:#ffc80b;">Kahoot</a>
+      <a href="https://jamboard.google.com/" target="_blank" class="button" style="background:#ffb6b9;">Jamboard</a>
+      <a href="https://forms.google.com/" target="_blank" class="button" style="background:#f48fb1;">Google Forms</a>
     </div>
-  </div>
+  </section>
 
-  <!-- МОДАЛ: РЕФЛЕКСИЯ -->
-  <div id="m-ref" class="modal" onclick="if(event.target===this)closeModal('m-ref')">
-    <div class="card" role="dialog" aria-modal="true" aria-labelledby="refTitle">
-      <span class="close" onclick="closeModal('m-ref')">&times;</span>
-      <h2 id="refTitle">Рефлексия</h2>
-      <p>Рефлексия арқылы оқушылар сабақтағы әсерін, сезімін және не үйренгенін сөзбен жеткізеді. Сабақты қорытындылау үшін қолдануға болады:</p>
-      <ul>
-        <li>Сұрақ-жауап: «Бүгін не ұнады?», «Не қиын болды?»</li>
-        <li>Эмо-бағалау: «қуандың ба/жағдайың қандай?»</li>
-        <li>Жазбаша рефлексия: қысқа жауаптар немесе күнделік жазу</li>
-      </ul>
-      <p style="margin-top:12px; font-weight:600;">Кеңес: рефлексияны қысқа және жылы етіп өткізіңіз — оқушының жүрекпен айтар ойын тыңдау маңызды.</p>
-    </div>
-  </div>
+  <!-- 🌿 Практикалық тренингтер -->
+  <section id="trenings">
+    <h2>🌿 Практикалық тренингтер</h2>
 
-  <!-- МОДАЛ: ТРЕНИНГИ -->
-  <div id="m-tr" class="modal" onclick="if(event.target===this)closeModal('m-tr')">
-    <div class="card" role="dialog" aria-modal="true" aria-labelledby="trTitle">
-      <span class="close" onclick="closeModal('m-tr')">&times;</span>
-      <h2 id="trTitle">Тренинги</h2>
+    <h3>«Жылы сөздер бағы»</h3>
+    <p><strong>Мақсаты:</strong> Оқушыларды жылы сөз айтуға, бір-біріне мейірім мен жақсы көңіл бөлуге үйрету.</p>
+    <p><strong>Өткізілу барысы:</strong> Әр оқушы өз аты жазылған қағазға жылы сөз жазады. Кейін оларды “Жылы сөздер бағы” плакатында гүл түрінде орналастырады. Әр гүл — бір ізгі ой.</p>
+    <p><strong>Нәтиже:</strong> Балалардың бойында позитивті қарым-қатынас қалыптасып, сынып ішінде өзара сыйластық артады.</p>
 
-      <h3 style="color:var(--accent2); margin-bottom:6px;">«Жылы сөздер бағы»</h3>
-      <p>Әр оқушы гүл пішініндегі қағазға жылы сөз жазып, сынып қабырғасына іледі. Соңында барлығы бірге оқып, позитивті атмосфера құрылады.</p>
+    <hr>
 
-      <h3 style="color:var(--accent2); margin-bottom:6px;">«Жылы сөздер жәшігі»</h3>
-      <p>Оқушылар бір-біріне жылы сөз жазып жәшікке қалдырады. Апта соңында ашып, жылы хаттарды оқиды — бұл сенімділік пен қолдауды күшейтеді.</p>
+    <h3>«Жылы сөздер жәшігі»</h3>
+    <p><strong>Мақсаты:</strong> Эмпатия мен қолдау сезімін арттыру.</p>
+    <p><strong>Өткізілу барысы:</strong> Сынып ішінде “жылы сөздер жәшігі” қойылады. Күн сайын балалар өз достарына жақсы тілектер, мадақтау немесе алғыс сөздерін жазады да, жәшікке салады.</p>
+    <p><strong>Нәтиже:</strong> Сыныпта сенім мен достық атмосферасы нығаяды, оқушылардың өз-өзіне сенімі артады.</p>
 
-      <h3 style="color:var(--accent2); margin-bottom:6px;">«Мейірім көпірі» және «Жүректен жүрекке»</h3>
-      <p>Қарапайым жұптық жаттығулар: біреуге жақсы сөз айту, комплимент жасау және ризашылық білдіру. Бұл жолы тілдің тәрбиешіл рөлі айқын көрінеді.</p>
-    </div>
-  </div>
+    <hr>
 
-  <!-- МОДАЛ: ЖЫЛЫ СӨЗДЕР -->
-  <div id="m-warm" class="modal" onclick="if(event.target===this)closeModal('m-warm')">
-    <div class="card" role="dialog" aria-modal="true" aria-labelledby="warmTitle">
-      <span class="close" onclick="closeModal('m-warm')">&times;</span>
-      <h2 id="warmTitle">Жылы сөздер</h2>
-      <p>Сені қолдауға және шабыттандыруға арналған сөздер — сабақ басталар алдында немесе қорытындыда қолдануға өте ыңғайлы.</p>
+    <h3>«Мейірім көпірі»</h3>
+    <p><strong>Мақсаты:</strong> Топтық байланыс пен эмпатияны дамыту.</p>
+    <p><strong>Өткізілу барысы:</strong> Қатысушылар жұп болып отырады. Бірі екіншісіне жақсы қасиеттерін айтып береді, кейін рөлдер ауысады. Соңында барлығы “Мейірім көпірі” деген ортақ плакатқа қолтаңба қалдырады.</p>
+    <p><strong>Нәтиже:</strong> Оқушылар арасында сенім мен өзара сыйластық артады.</p>
+  </section>
 
-      <div class="warm-grid">
-        <div class="warm-item">
-          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=400&q=60" alt="sunrise">
-          <p>«Жылы сөз — жанның шуағы»</p>
-        </div>
+  <!-- 💖 Жылы сөздер -->
+  <section id="jylly-sozder" style="padding: 50px 20px; background-color: #faf9f6; text-align: center; margin-top: 40px;">
+    <h2 style="color: #333; font-size: 30px; margin-bottom: 15px;">🌷 Жылы сөздер</h2>
+    <p style="font-size: 18px; color: #555;">Жүректі жылытатын, шабыт беретін және рухани күш сыйлайтын сөздер:</p>
 
-        <div class="warm-item">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=60" alt="flowers">
-          <p>«Сенің сөзің — біреудің күлімі»</p>
-        </div>
+    <button onclick="toggleWarmWords()" 
+            style="margin-top: 20px; background-color: #ff9eb5; border: none; color: white; 
+                   padding: 14px 34px; border-radius: 8px; font-size: 18px; cursor: pointer; 
+                   transition: all 0.3s ease;">
+      🌸 Жылы сөздерді көру
+    </button>
 
-        <div class="warm-item">
-          <img src="https://images.unsplash.com/photo-1507209696999-3c5323a8f7f6?auto=format&fit=crop&w=400&q=60" alt="hands">
-          <p>«Мейіріммен айтылған сөз — емші»</p>
-        </div>
-
-        <div class="warm-item">
-          <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=400&q=60" alt="light">
-          <p>«Кішкентай жақсылық — үлкен өзгеріс»</p>
-        </div>
+    <div id="warmWords" 
+         style="display: none; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+      
+      <div style="background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.08); border-radius: 12px; padding: 25px; line-height: 1.8; color: #333; font-size: 19px; animation: fadeIn 1s;">
+        <p>💖 <strong>1.</strong> Әр күнің жаңа мүмкіндіктер мен қуаныштарға толы болсын!</p>
+        <p>🌞 <strong>2.</strong> Сенің жылы сөзің – басқаға шабыт пен қуат сыйлайды.</p>
+        <p>🌸 <strong>3.</strong> Мейірім – жүректен басталып, сөз арқылы тарайды.</p>
+        <p>🌿 <strong>4.</strong> Кішкентай жақсылық – үлкен қуаныштың бастауы.</p>
+        <p>💫 <strong>5.</strong> Тілдің жылуы – адамның жүрегінен шығады.</p>
+        <p>🌺 <strong>6.</strong> Сенің күлкің – біреудің күнін жарық қылады.</p>
+        <p>✨ <strong>7.</strong> Жақсы сөз – жанның шипасы.</p>
+        <p>🍀 <strong>8.</strong> Сөз жүректен шықса, жүрекке жетеді.</p>
+        <p>🔥 <strong>9.</strong> Мейірімді сөз – сенім мен достықтың бастауы.</p>
+        <p>🌷 <strong>10.</strong> Бүгін айтқан жылы сөзің – ертеңгі жақсылықтың дәні.</p>
       </div>
-
     </div>
-  </div>
+  </section>
 
-  <!-- МОДАЛ: ПЛАТФОРМАЛАР (логотипы + ссылки) -->
-  <div id="m-pl" class="modal" onclick="if(event.target===this)closeModal('m-pl')">
-    <div class="card" role="dialog" aria-modal="true" aria-labelledby="plTitle">
-      <span class="close" onclick="closeModal('m-pl')">&times;</span>
-      <h2 id="plTitle">Платформалар</h2>
-      <p>Төмендегі логотиптерге бассаңыз — сол платформаның ресми сайты ашылады.</p>
+  <footer>
+    <p>© 2025 Жылы сөздер жобасы | Қадыр Бастами</p>
+  </footer>
 
-      <div class="platforms" aria-hidden="false">
-        <div class="platform">
-          <a href="https://padlet.com" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Padlet_logo.svg" alt="Padlet logo">
-            <span>Padlet</span>
-          </a>
-        </div>
-
-        <div class="platform">
-          <a href="https://www.mentimeter.com" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Mentimeter_logo.svg" alt="Mentimeter logo">
-            <span>Mentimeter</span>
-          </a>
-        </div>
-
-        <div class="platform">
-          <a href="https://jamboard.google.com" target="_blank" rel="noopener noreferrer">
-            <img src="https://www.gstatic.com/images/branding/product/1x/jamboard_512dp.png" alt="Jamboard logo">
-            <span>Jamboard</span>
-          </a>
-        </div>
-
-        <div class="platform">
-          <a href="https://kahoot.com" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Kahoot%21_logo.svg" alt="Kahoot logo">
-            <span>Kahoot</span>
-          </a>
-        </div>
-
-        <div class="platform">
-          <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Google_Forms_2020_Logo.svg" alt="Google Forms logo">
-            <span>Google Forms</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <footer>© 2025 — Автор: Шегебаева Жанель</footer>
-
-<script>
-  function openModal(id){
-    document.getElementById(id).style.display = "flex";
-  }
-  function closeModal(id){
-    document.getElementById(id).style.display = "none";
-  }
-  // закрывать по ESC
-  document.addEventListener('keydown', e => { if(e.key==='Escape'){ document.querySelectorAll('.modal').forEach(m=>m.style.display='none'); }});
-</script>
-
+  <script>
+    function toggleWarmWords() {
+      const block = document.getElementById("warmWords");
+      block.style.display = (block.style.display === "none") ? "block" : "none";
+    }
+  </script>
 </body>
 </html>
