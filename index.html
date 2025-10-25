@@ -7,71 +7,55 @@
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(to bottom right, #e3f2fd, #c8e6c9);
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: #2e4053;
+      color: #0d47a1;
       text-align: center;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     header {
-      position: absolute;
-      top: 30px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    header img {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      margin-top: 30px;
     }
 
     h1 {
-      color: #1565c0;
-      font-size: 28px;
-      margin-bottom: 5px;
+      font-size: 30px;
+      color: #0d47a1;
+      text-shadow: 1px 1px 2px white;
     }
 
     h3 {
-      color: #388e3c;
-      font-size: 18px;
-      margin-top: 0;
+      color: #1b5e20;
+      font-weight: normal;
+      text-shadow: 1px 1px 1px #fff;
     }
 
     .buttons {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
-      margin-top: 80px;
+      gap: 20px;
+      margin-top: 100px;
     }
 
     button {
-      background: linear-gradient(90deg, #42a5f5, #66bb6a);
+      background: linear-gradient(90deg, #2196f3, #64b5f6);
       border: none;
       color: white;
-      padding: 15px 35px;
+      padding: 15px 40px;
       border-radius: 12px;
       font-size: 18px;
       cursor: pointer;
       transition: 0.3s;
       width: 260px;
-      text-align: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     button:hover {
       transform: scale(1.05);
-      background: linear-gradient(90deg, #1e88e5, #43a047);
+      background: linear-gradient(90deg, #1976d2, #42a5f5);
     }
 
     .modal {
@@ -83,7 +67,7 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     .modal-content {
@@ -91,11 +75,11 @@
       margin: 5% auto;
       padding: 25px;
       border-radius: 12px;
-      width: 80%;
-      max-width: 800px;
+      width: 85%;
+      max-width: 850px;
       text-align: left;
-      color: #2e4053;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      color: #0d47a1;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
       animation: fadeIn 0.3s;
     }
 
@@ -105,7 +89,7 @@
     }
 
     .close {
-      color: #999;
+      color: #666;
       float: right;
       font-size: 26px;
       cursor: pointer;
@@ -115,50 +99,57 @@
       color: #000;
     }
 
-    ul {
-      margin-left: 20px;
-      line-height: 1.6;
+    h2 {
+      color: #1565c0;
     }
 
-    h2 {
-      color: #1b5e20;
+    ul {
+      line-height: 1.7;
+    }
+
+    .platform-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .platform {
+      background: #e3f2fd;
+      border-radius: 10px;
+      padding: 15px;
+      width: 150px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .platform:hover {
+      transform: scale(1.05);
+      background: #bbdefb;
+    }
+
+    .platform img {
+      width: 60px;
+      height: 60px;
     }
 
     .footer {
-      margin-top: 40px;
-      color: #555;
-      font-size: 14px;
-      position: absolute;
-      bottom: 15px;
-    }
-
-    #musicControl {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #42a5f5;
-      border: none;
+      margin-top: 50px;
       color: white;
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    #musicControl:hover {
-      background: #1e88e5;
+      text-shadow: 1px 1px 2px #000;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="logo">
-    <div>
-      <h1>«Тірі тіл: тіл мен жүректің үндестігі»</h1>
-      <h3>Автор: Шегебаева Жанель</h3>
-    </div>
+    <h1>«Тірі тіл: тіл мен жүректің үндестігі»</h1>
+    <h3>Автор: Шегебаева Жанель</h3>
   </header>
 
   <div class="buttons">
@@ -168,67 +159,72 @@
     <button onclick="openModal('zhylySoz')">💖 Жылы сөздер</button>
   </div>
 
-  <!-- Музыка -->
-  <audio id="backgroundMusic" loop autoplay>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d9c69f5f09.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="musicControl" onclick="toggleMusic()">🔊 Музыка</button>
-
-  <!-- Модалдар -->
+  <!-- РЕФЛЕКСИЯ -->
   <div id="refleksiya" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('refleksiya')">&times;</span>
       <h2>🪞 Рефлексия</h2>
-      <p>Рефлексия сабағында оқушылар өз ойларын еркін білдіреді. Заманауи платформалар арқылы кері байланыс алу тиімді:</p>
+      <p>Оқушылар өз пікірін, сезімін білдіру арқылы сабақтың маңызын түсінеді. Рефлексия үшін келесі платформаларды қолдануға болады:</p>
       <ul>
-        <li><b>Mentimeter</b> — интерактивті пікірлер мен диаграммалар.</li>
-        <li><b>Padlet</b> — жылы сөздер қабырғасы.</li>
-        <li><b>Kahoot</b> — ойын түріндегі сұрақ-жауап.</li>
-        <li><b>Jamboard</b> — идеялар тақтасы.</li>
-        <li><b>Google Forms</b> — қысқа сауалнама арқылы қорытынды алу.</li>
+        <li>💬 Mentimeter — интерактивті сұрақтар мен сөз бұлттары.</li>
+        <li>📋 Google Forms — кері байланыс алу.</li>
+        <li>🧠 Kahoot — ойынды рефлексия түрінде пайдалану.</li>
       </ul>
     </div>
   </div>
 
+  <!-- ПЛАТФОРМАЛАР -->
   <div id="platforma" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('platforma')">&times;</span>
       <h2>💻 Платформалар</h2>
-      <ul>
-        <li>🔹 Mentimeter — рефлексия мен кері байланыс алу үшін.</li>
-        <li>🔹 Padlet — жылы сөздер мен суреттермен бөлісу қабырғасы.</li>
-        <li>🔹 Kahoot — білімді ойын арқылы тексеру.</li>
-        <li>🔹 Jamboard — ұжымдық шығармашылық ой бөлісу.</li>
-        <li>🔹 Google Forms — сауалнама мен талдау үшін.</li>
-      </ul>
+      <p>Сабақта рефлексия мен тренингтер өткізуге көмектесетін заманауи онлайн құралдар:</p>
+      <div class="platform-icons">
+        <a href="https://www.mentimeter.com" target="_blank" class="platform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mentimeter_Logo.png" alt="Mentimeter">
+          <p><b>Mentimeter</b></p>
+        </a>
+        <a href="https://padlet.com" target="_blank" class="platform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Padlet_logo.png" alt="Padlet">
+          <p><b>Padlet</b></p>
+        </a>
+        <a href="https://kahoot.com" target="_blank" class="platform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Kahoot_Logo.png" alt="Kahoot">
+          <p><b>Kahoot</b></p>
+        </a>
+        <a href="https://jamboard.google.com" target="_blank" class="platform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Jamboard_logo.png" alt="Jamboard">
+          <p><b>Jamboard</b></p>
+        </a>
+        <a href="https://forms.google.com" target="_blank" class="platform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Google_Forms_logo_%282014-2020%29.svg" alt="Forms">
+          <p><b>Google Forms</b></p>
+        </a>
+      </div>
     </div>
   </div>
 
+  <!-- ТРЕНИНГТЕР -->
   <div id="trening" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('trening')">&times;</span>
       <h2>🌿 Тренингтер</h2>
-
       <h3>1. «Жылы сөздер бағы»</h3>
-      <p>Оқушылар жылы сөздер жазылған гүл суреттерін іледі. Сабақ соңында сынып «жылы сөздер бағы» болып гүлдейді.</p>
-
+      <p>Оқушылар жылы сөздер жазылған қағаз гүлдерді қабырғаға іліп, сабақ соңында «жылы сөздер бағы» қалыптастырады.</p>
       <h3>2. «Жылы сөздер жәшігі»</h3>
-      <p>Әр сабақта оқушылар бір-біріне тілек жазып жәшікке салады. Апта соңында бәрі бірге оқылады.</p>
-
+      <p>Әр оқушы бір-біріне тілек жазып, жәшікке салады. Апта соңында ашып, бәрі бірге оқиды.</p>
       <h3>3. «Мейірім көпірі»</h3>
-      <p>Жұппен жұмыс істеу кезінде оқушылар серіктесіне жақсы қасиетін айтады. Бұл жылы байланыс орнатады.</p>
-
+      <p>Жұппен жұмыс: оқушылар бір-бірінің жақсы қасиетін атап өтеді. Бұл жылы байланыс орнатады.</p>
       <h3>4. «Жүректен жүрекке»</h3>
-      <p>Барлығы дөңгеленіп отырып, бір-біріне шынайы тілек арнайды. Сабақ жылылықпен аяқталады.</p>
+      <p>Барлығы шеңберге отырып, бір-біріне шынайы тілек арнайды. Бұл — сабақтың ең әсерлі сәті.</p>
     </div>
   </div>
 
+  <!-- ЖЫЛЫ СӨЗДЕР -->
   <div id="zhylySoz" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('zhylySoz')">&times;</span>
       <h2>💖 Жылы сөздер</h2>
-      <p>Жылы сөз – рух пен көңілдің азығы:</p>
       <ul>
         <li>🌸 Сенің күнің сәтті өтсін!</li>
         <li>🌿 Сен бәрін істей аласың!</li>
@@ -255,19 +251,6 @@
     function closeModal(id) {
       document.getElementById(id).style.display = 'none';
     }
-
-    function toggleMusic() {
-      const music = document.getElementById("backgroundMusic");
-      const btn = document.getElementById("musicControl");
-      if (music.paused) {
-        music.play();
-        btn.textContent = "🔊 Музыка";
-      } else {
-        music.pause();
-        btn.textContent = "🔇 Музыка өшіру";
-      }
-    }
   </script>
-
 </body>
 </html>
