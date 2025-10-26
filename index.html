@@ -1,155 +1,158 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Жылы сөздер жобасы</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiri Til Hub</title>
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
-      background-color: #fffdfd;
-      color: #333;
+      background: linear-gradient(180deg, #f0faff 0%, #ffffff 100%);
+      color: #222;
       margin: 0;
       padding: 0;
-    }
-
-    header {
-      background-color: #ffe4ec;
       text-align: center;
-      padding: 25px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      color: white; /* ✅ Добавлено — белый текст */
     }
-
-    h1 {
-      font-size: 32px;
+    header {
+      background: #90caf9;
+      color: #fff;
+      padding: 20px 10px;
+      border-bottom: 4px solid #64b5f6;
+    }
+    header h1 {
       margin: 0;
-      color: white; /* ✅ Сделан белым */
+      font-size: 28px;
     }
-
     header p {
-      color: white; /* ✅ Белый текст под заголовком */
+      margin: 4px 0 0;
+      font-style: italic;
+    }
+
+    main {
+      padding: 30px 10px;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .menu button {
+      background: #2196f3;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
       font-size: 16px;
-      margin-top: 8px;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    a.button {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
-      border-radius: 8px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
       transition: 0.3s;
     }
-    a.button:hover {
-      opacity: 0.9;
+
+    .menu button:hover {
+      background: #1976d2;
+      transform: scale(1.05);
+    }
+
+    .content {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      padding: 25px;
+      max-width: 750px;
+      margin: 0 auto;
+      transition: 0.3s;
     }
 
     footer {
-      background-color: #ffe4ec;
-      text-align: center;
+      margin-top: 40px;
       padding: 15px;
+      background: #e3f2fd;
+      color: #333;
       font-size: 14px;
-      color: #444;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>🌸 Жылы сөздер жобасы</h1>
-    <p>Мейірім мен ізгілікке толы сөздер әлемі</p>
+    <h1>🌿 Tiri Til Hub</h1>
+    <p>Тіл мен жүректің үндестігі</p>
   </header>
 
-  <!-- 📚 Платформалар -->
-  <section id="platformalar">
-    <h2>💻 Онлайн платформалар мен сервистер</h2>
-    <p>Бұл бөлімде тіл мен жүректің үндестігін дамытуға арналған пайдалы онлайн құралдар жинақталған:</p>
+  <main>
+    <section class="menu">
+      <button onclick="openSection('refleksiya')">🪞 Рефлексия</button>
+      <button onclick="openSection('treningter')">🧠 Практикалық тренингтер</button>
+      <button onclick="openSection('zhylysuzder')">💖 Жылы сөздер</button>
+      <button onclick="openSection('platformalar')">🌐 Платформалар</button>
+    </section>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
-      <a href="https://www.mentimeter.com/" target="_blank" class="button" style="background:#a56da7;">Mentimeter</a>
-      <a href="https://padlet.com/" target="_blank" class="button" style="background:#81d4fa;">Padlet</a>
-      <a href="https://kahoot.com/" target="_blank" class="button" style="background:#ffc80b;">Kahoot</a>
-      <a href="https://jamboard.google.com/" target="_blank" class="button" style="background:#ffb6b9;">Jamboard</a>
-      <a href="https://forms.google.com/" target="_blank" class="button" style="background:#f48fb1;">Google Forms</a>
-    </div>
-  </section>
-
-  <!-- 🌿 Практикалық тренингтер -->
-  <section id="trenings">
-    <h2>🌿 Практикалық тренингтер</h2>
-
-    <h3>«Жылы сөздер бағы»</h3>
-    <p><strong>Мақсаты:</strong> Оқушыларды жылы сөз айтуға, бір-біріне мейірім мен жақсы көңіл бөлуге үйрету.</p>
-    <p><strong>Өткізілу барысы:</strong> Әр оқушы өз аты жазылған қағазға жылы сөз жазады. Кейін оларды “Жылы сөздер бағы” плакатында гүл түрінде орналастырады. Әр гүл — бір ізгі ой.</p>
-    <p><strong>Нәтиже:</strong> Балалардың бойында позитивті қарым-қатынас қалыптасып, сынып ішінде өзара сыйластық артады.</p>
-
-    <hr>
-
-    <h3>«Жылы сөздер жәшігі»</h3>
-    <p><strong>Мақсаты:</strong> Эмпатия мен қолдау сезімін арттыру.</p>
-    <p><strong>Өткізілу барысы:</strong> Сынып ішінде “жылы сөздер жәшігі” қойылады. Күн сайын балалар өз достарына жақсы тілектер, мадақтау немесе алғыс сөздерін жазады да, жәшікке салады.</p>
-    <p><strong>Нәтиже:</strong> Сыныпта сенім мен достық атмосферасы нығаяды, оқушылардың өз-өзіне сенімі артады.</p>
-
-    <hr>
-
-    <h3>«Мейірім көпірі»</h3>
-    <p><strong>Мақсаты:</strong> Топтық байланыс пен эмпатияны дамыту.</p>
-    <p><strong>Өткізілу барысы:</strong> Қатысушылар жұп болып отырады. Бірі екіншісіне жақсы қасиеттерін айтып береді, кейін рөлдер ауысады. Соңында барлығы “Мейірім көпірі” деген ортақ плакатқа қолтаңба қалдырады.</p>
-    <p><strong>Нәтиже:</strong> Оқушылар арасында сенім мен өзара сыйластық артады.</p>
-  </section>
-
-  <!-- 💖 Жылы сөздер -->
-  <section id="jylly-sozder" style="padding: 50px 20px; background-color: #faf9f6; text-align: center; margin-top: 40px;">
-    <h2 style="color: #333; font-size: 30px; margin-bottom: 15px;">🌷 Жылы сөздер</h2>
-    <p style="font-size: 18px; color: #555;">Жүректі жылытатын, шабыт беретін және рухани күш сыйлайтын сөздер:</p>
-
-    <button onclick="toggleWarmWords()" 
-            style="margin-top: 20px; background-color: #ff9eb5; border: none; color: white; 
-                   padding: 14px 34px; border-radius: 8px; font-size: 18px; cursor: pointer; 
-                   transition: all 0.3s ease;">
-      🌸 Жылы сөздерді көру
-    </button>
-
-    <div id="warmWords" 
-         style="display: none; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
-      
-      <div style="background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.08); border-radius: 12px; padding: 25px; line-height: 1.8; color: #333; font-size: 19px; animation: fadeIn 1s;">
-        <p>💖 <strong>1.</strong> Әр күнің жаңа мүмкіндіктер мен қуаныштарға толы болсын!</p>
-        <p>🌞 <strong>2.</strong> Сенің жылы сөзің – басқаға шабыт пен қуат сыйлайды.</p>
-        <p>🌸 <strong>3.</strong> Мейірім – жүректен басталып, сөз арқылы тарайды.</p>
-        <p>🌿 <strong>4.</strong> Кішкентай жақсылық – үлкен қуаныштың бастауы.</p>
-        <p>💫 <strong>5.</strong> Тілдің жылуы – адамның жүрегінен шығады.</p>
-        <p>🌺 <strong>6.</strong> Сенің күлкің – біреудің күнін жарық қылады.</p>
-        <p>✨ <strong>7.</strong> Жақсы сөз – жанның шипасы.</p>
-        <p>🍀 <strong>8.</strong> Сөз жүректен шықса, жүрекке жетеді.</p>
-        <p>🔥 <strong>9.</strong> Мейірімді сөз – сенім мен достықтың бастауы.</p>
-        <p>🌷 <strong>10.</strong> Бүгін айтқан жылы сөзің – ертеңгі жақсылықтың дәні.</p>
-      </div>
-    </div>
-  </section>
+    <section id="content" class="content">
+      <h2>Қош келдіңіз!</h2>
+      <p>Бұл сайтта тіл мен жүректің үндестігін табуға бағытталған тапсырмалар, платформалар мен тренингтер жинақталған.</p>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Жылы сөздер жобасы | Шегебаева Жанель</p>
+    <p>© 2025 Tiri Til Hub | Авторлық педагогикалық идея</p>
   </footer>
 
   <script>
-    function toggleWarmWords() {
-      const block = document.getElementById("warmWords");
-      block.style.display = (block.style.display === "none") ? "block" : "none";
+    function openSection(section) {
+      const content = document.getElementById('content');
+      let html = '';
+
+      if (section === 'refleksiya') {
+        html = `
+          <h2>🪞 Рефлексия</h2>
+          <p>Сабақ соңында немесе бөлім аяқталғанда қолдануға болатын ой толғау әдістері:</p>
+          <ul style="text-align:left; max-width:600px; margin:0 auto;">
+            <li>«Бүгін мен білдім...» – әр оқушы бір сөйлеммен сабақтан алған әсерін айтады.</li>
+            <li>«Жылы жүрек» – балалар бір-біріне жылы сөз жазып береді.</li>
+            <li>«Күн шуағы» – тақтаға күн суретін салып, сәулелерге жақсы әсерлер жазу.</li>
+            <li>Онлайн балама: <strong>Mentimeter</strong>, <strong>Padlet</strong>, <strong>Wordwall</strong>.</li>
+          </ul>`;
+      }
+
+      if (section === 'treningter') {
+        html = `
+          <h2>🧠 Практикалық тренингтер</h2>
+          <p>Топтық немесе жұптық жұмыста қолдануға болатын шағын тренингтер:</p>
+          <ul style="text-align:left; max-width:600px; margin:0 auto;">
+            <li><strong>«Айна»</strong> – бір оқушы қимыл жасайды, екіншісі қайталайды (сенім мен көңіл күйге әсер етеді).</li>
+            <li><strong>«Жылы орындық»</strong> – бір оқушы ортада, қалғандары оның жақсы қасиеттерін айтады.</li>
+            <li><strong>«Менің күшім неде?»</strong> – әр оқушы өз жақсы жағын айтып, топ пікірін тыңдайды.</li>
+          </ul>`;
+      }
+
+      if (section === 'zhylysuzder') {
+        html = `
+          <h2>💖 Жылы сөздер жәшігі</h2>
+          <p>Оқушылар жылы сөз, тілек, алғыс жазып қалдыратын шығармашылық бұрыш идеялары:</p>
+          <ul style="text-align:left; max-width:600px; margin:0 auto;">
+            <li>Аптаның соңында «Жылы хаттар» ашылып, бірге оқылады.</li>
+            <li>Қағаздан жасалған жүрекке жылы сөз жазу және плакатқа ілу.</li>
+            <li>Онлайн нұсқасы: <strong>Google Jamboard</strong> немесе <strong>Padlet</strong>.</li>
+          </ul>`;
+      }
+
+      if (section === 'platformalar') {
+        html = `
+          <h2>🌐 Платформалар</h2>
+          <p>Тілді дамыту және сабақ қызықтылығын арттыруға арналған платформалар:</p>
+          <ul style="text-align:left; max-width:600px; margin:0 auto;">
+            <li><strong>Wordwall.net</strong> – тест, сәйкестендіру, пазл жасау.</li>
+            <li><strong>LearningApps.org</strong> – жұптастыру, сұрақ-жауап ойындары.</li>
+            <li><strong>Kahoot!</strong> – жылдам викториналар мен ойындар.</li>
+            <li><strong>Genially</strong> – интерактивті презентациялар, мозаика жасауға ыңғайлы.</li>
+          </ul>`;
+      }
+
+      content.innerHTML = html;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>
